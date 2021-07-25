@@ -6,7 +6,8 @@ inp.on("close", () =>
 {
     
     //start-herevar 
-
+    /*
+//Sum of all Array
 sum=0;
 
 for(var i=0;i<userInput.length;i++)
@@ -20,5 +21,61 @@ for(var i=0;i<userInput.length;i++)
     }
 }
 console.log(sum);
+
+*/
+/*
+//Using type of keyword
+let intvar=10;
+let stringvar='Ab';
+let bolvar=true;
+let arrayvar=[10,10.3,"a",23,false];
+let objvar={"name":"AB","age":"30","City":"Chennai"};
+
+for(var i=0;i<arrayvar.length;i++)
+{
+  console.log(typeof(arrayvar[i]));  
+}
+
+*/
+
+/*Typeof example
+let intvar=parseFloat(userInput[0]);
+let stringvar=userInput[1];
+let bolvar=(userInput[2]=='true');//Boolen to string
+let arrayvar=userInput[3].split(",");
+//let objvar={"name":"AB","age":"30","City":"Chennai"};
+
+
+    
+     console.log(arrayvar);  
+  console.log(typeof(arrayvar));  
+  
+  */
+  
+  /* calendar month 
+  let days=[31,28,31,30,31,30,31,31,30,31,30,31];
+  
+  let monthno=[1,2,3,4,5,6,7,8,9,10,11,12];
+ let  input =userInput[0].split(" ");
+ 
+ if(input[0]==0)
+{
+     console.log("Error");  
+}
+     else
+     {
+  if(input[0]<=12)
+  {
+console.log(days[monthno.indexOf(+input[0])]);
+}
+else 
+{
+console.log("Error");
+
+}
+}
+ */
+
+
 
 });
