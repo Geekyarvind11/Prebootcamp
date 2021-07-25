@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, shrink-to-fit=no">
+<title>GUVI | IDE | Free Online Compiler with more that 20+ on demand programming languages</title>
+<meta name="description" content="Free Online Compiler to run your programs online. It support more than 20+ on demand programming languages. BASH, BASIC, C, CLOJURE, CRYSTAL, C++, C#, ELIXIR, GO, HASKELL, INSECT, JAVA, JAVA 8, JAVASCRIPT, OCAML, OCTAVE, PASCAL, PYTHON 2, PYTHON 3, RUBY, RUST are the supported programming languages" />
+<meta name="keywords" content="online ide, online compiler, run code online, online debugging tool, online interpreter, free online compiler, BASH, BASIC, C, CLOJURE, CRYSTAL, C++, C#, ELIXIR, GO, HASKELL, INSECT, JAVA, JAVA 8, JAVASCRIPT, OCAML, OCTAVE, PASCAL, PYTHON 2, PYTHON 3, RUBY, RUST">
+
+<link rel='icon' href='images/favicon.ico' type='image/x-icon'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+<link href="css/4.css" rel="stylesheet">
+<link href="css/stylev2.css?stamp=1578720149" rel="stylesheet">
+<link href="css/guviv2.css?stamp=1575357807" rel="stylesheet">
+<link href="css/ide.css?stamp=1575357807" rel="stylesheet">
+<script defer type="text/javascript" src="js/library/visualizer/build/embed.bundle.js" charset="utf-8"></script>
+<script defer type="text/javascript" src="js/library/dependency.js"></script>
+<script defer type="text/javascript" src="js/steroid.js?v=11111"></script>
+<script defer src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+<script defer src="https://unpkg.com/ace-builds@1.4.8/src-min-noconflict/ace.js" type="text/javascript"></script>
+<script defer src="https://unpkg.com/split.js/dist/split.min.js"></script>
+<script defer type="text/javascript" src="js/sidebar.js"></script>
+</head>
+<body>
+<main role="main" class="container-fluid main-body" id="ide-page">
+
+<header class="bg-white px-2 row">
+
+<div class="sidebar-container">
+<div id="sidebar" class="sidebar-sticky sidebar-collapse collapse in shadow-sm">
+<a class="navbar-brand" href="dashboard.html">GUVI</a>
+<ul class="nav flex-column  main-menu">
+<li class="nav-item index-link dashboard-link">
+<a class="nav-link" href="dashboard.html">
+<i class="material-icons">home</i><span>Home</span>
+</a>
+</li>
+<li class="nav-item courses-link">
+<a class="nav-link" href="courses.html">
+<i class="material-icons">video_library</i> <span>Courses</span>
+</a>
+</li>
+<li class="nav-item code-kata-link">
+<a class="nav-link" href="code-kata.html">
+<i class="icon-code-kata"></i><span>Code_Kata</span>
+</a>
+</li>
+<li class="nav-item micro-arc-link">
+<a class="nav-link" href="micro-arc.html">
+<i class="icon-micro-arc"></i><span>Micro Arc</span>
+</a>
+</li>
+<li class="nav-item project-board-link">
+<a class="nav-link" href="project-board.html">
+<i class="icon-project-board"></i><span>Project Board</span>
+</a>
+ </li>
+<li class="nav-item leader-board-link">
+<a class="nav-link" href="leader-board.html">
+<i class="icon-leader-board"></i><span>Leaderboard</span>
+</a>
+</li>
+<li class="nav-item rewards-link">
+<a class="nav-link" href="rewards.html">
+<i class="icon-reward"></i><span>Rewards</span>
+</a>
+</li>
+<li class="nav-item bookmarks-link">
+<a class="nav-link" href="bookmarks.html">
+<i class="material-icons">bookmarks</i><span>Bookmarks</span>
+</a>
+</li>
+<li class="nav-item jobs-link">
+<a class="nav-link" href="jobs.html">
+<i class="material-icons">work</i> <span>Jobs</span>
+</a>
+</li>
+</ul>
+
+
+<ul class="nav flex-column code-kata-menu" id="ckMenuTabs" role="tablist">
+<li class="nav-item ck-questions-link">
+<a class="nav-link active" id="ck-questions-tab" data-toggle="tab" href="#ck-questions" role="tab" aria-controls="ck-questions" aria-selected="true">
+<i class="icon-ck-questions"></i>
+<span>Questions</span>
+</a>
+</li>
+<li class="nav-item ck-instructions-link">
+<a class="nav-link" id="ck-instructions-tab" data-toggle="tab" href="#ck-instructions" role="tab" aria-controls="ck-instructions" aria-selected="false">
+<i class="icon-ck-instructions"></i>
+<span>Instructions</span>
+</a>
+</li>
+<li class="nav-item ck-github-link">
+<a class="nav-link" id="ck-github-tab" data-toggle="tab" href="#ck-github" role="tab" aria-controls="ck-github" aria-selected="false">
+<i class="icon-ck-github"></i>
+<span>github</span>
+</a>
+</li>
+<li class="nav-item ck-peer-submission-link">
+<a class="nav-link" id="ck-peer-submission-tab" data-toggle="tab" href="#ck-peer-submission" role="tab" aria-controls="ck-peer-submission" aria-selected="false">
+<i class="icon-ck-peer-submission"></i>
+<span>Peer submissions</span>
+</a>
+ </li>
+<li class="nav-item ck-path-link">
+<a class="nav-link" id="ck-path-tab" data-toggle="tab" href="#ck-path" role="tab" aria-controls="ck-path" aria-selected="false">
+<i class="icon-ck-path"></i>
+<span>Topic path</span>
+</a>
+</li>
+</ul>
+
+</div>
+</div>
+
+<nav class="col navbar navbar-expand-md navbar-light">
+<button id="sidebarToggle" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+<i class="material-icons">menu</i>
+</button>
+<a class="navbar-brand visible-md" href="#">
+<img src="images/guvi-logo.png" alt="GUVI : Learn to code in your native language | IDE" />
+</a>
+
+<div class="list-group list-group-horizontal-md user-profile" id="accountGroup">
+<button class="btn dropdown notification-box-toggler  " data-toggle="collapse" data-target="#notification-box">
+<i class="material-icons">notifications</i>
+</button>
+<button class="btn dropdown account-box-toggler" type="button" data-toggle="collapse" data-target="#account-box" aria-expanded="false" aria-controls="account-box">
+<div class="gravatar-wrap">
+<img src="images/profile-pic-sample.jpeg" class="gravatar" alt="username">
+</div>
+</button>
+<div class="accordion-group">
+
+<div class="collapse notification-box" id="notification-box" data-parent="#accountGroup">
+<div class="card card-body">
+<ul class="list-group">
+No notifications
+</ul>
+</div>
+</div>
+
+
+<div class="collapse account-box" id="account-box" data-parent="#accountGroup">
+<div class="card card-body">
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+</nav>
+</header>
+
+
+<div class="row d-flex pt-2 codeContainer">
+<div class="flex-fill flex-grow split" id="one">
+<div class="d-flex align-items-end justify-content-between border-bottom">
+<ul class="nav nav-tabs m-0 flex-nowrap" id="resultTabMobile" role="tablist">
+<li class="nav-item">
+<a class="nav-link active p-1" id="editor-tab-mobile" data-toggle="tab" href="#editor-mobile" role="tab" aria-controls="editor-mobile" aria-selected="true">EDITOR</a>
+</li>
+<li class="nav-item mobile-view">
+<a class="nav-link p-1" id="input-tab-mobile" data-toggle="tab" href="#input-mobile" role="tab" aria-controls="input-mobile" aria-selected="true">I/O</a>
+</li>
+
+</ul>
+<div class="d-flex align-items-end">
+<div class="pr-3">
+<select class="form-control" id="languageSelect">
+</select>
+</div>
+<button class="btn d-flex align-items-end justify-content-between p-1 mr-1" id="runCode">
+<span class="material-icons text-white px-1">play_arrow</span>
+<span class="align-self-center text-white px-1">Run</span>
+</button>
+
+<button class="btn d-flex align-items-end justify-content-between py-1 px-2 mr-1" data-toggle="modal" data-target="#editorSettingModal">
+<span class="material-icons">settings</span>
+</button>
+</div>
+</div>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="editor-mobile" role="tabpanel" aria-labelledby="editor-tab">
+<div id="editor"></div>
+</div>
+<div class="tab-pane fade p-2" id="input-mobile" role="tabpanel" aria-labelledby="input-tab-mobile">
+<div class="d-flex flex-fill flex-grow flex-column">
+<div class="mt-2">
+<h6 class="font-weight-bold">INPUT</h6>
+<textarea id="inputValue-mobile" class="form-control limit-fix" rows="5" placeholder="Your Input Here"></textarea>
+</div>
+<div id="output-mobile" class="mt-2">
+<div class="outputValue outputBox mt-2">
+<pre>Your Output will be displayed here</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-fill flex-grow desktop-view split" id="two">
+<ul class="nav nav-tabs ml-1" id="resultTab" role="tablist">
+<li class="nav-item">
+ <a class="nav-link active p-2" id="input-tab" data-toggle="tab" href="#input" role="tab" aria-controls="input" aria-selected="true">INPUT</a>
+</li>
+<li class="nav-item">
+<a class="nav-link p-2" id="output-tab" data-toggle="tab" href="#output" role="tab" aria-controls="output" aria-selected="false">OUTPUT</a>
+</li>
+</ul>
+<div class="tab-content p-1">
+<div class="tab-pane fade show active p-2" id="input" role="tabpanel" aria-labelledby="input-tab">
+<textarea id="inputValue" class="form-control limit-fix" rows="5" placeholder="Your Input Here"></textarea>
+</div>
+<div class="tab-pane fade p-2" role="tabpanel" id="output" aria-labelledby="output-tab">
+<div class="outputValue outputBox">
+<pre>Your Output will be displayed here</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="spinner spinner-border text-dark" role="status">
+<span class="sr-only">Loading...</span>
+</div>
+<div class="modal fade" id="reloadModal" tabindex="-1" role="dialog" aria-labelledby="reloadModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="reloadModalLabel">INACTIVITY</h5>
+</div>
+<div class="modal-body">
+<p>Page Expired due to inactivity. Please reload the page to continue.</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" id="reloadPage">Reload</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="editorSettingModal" tabindex="-1" role="dialog" aria-labelledby="editorSettingModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-slideout" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="editorSettingModalLabel">Editor Settings</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<h6 class="font-weight-bold p-2">Font Size</h6>
+<div class="d-flex align-items-center justify-content-between p-2">
+<input id="editor-font-size" type="range" name="fontSize" class="custom-range" min="10" max="40" value="14" step="1">
+</div>
+<h6 class="font-weight-bold p-2">Theme</h6>
+<div class="form-group d-flex justify-content-around p-2" id="themeControl">
+<div class="custom-control custom-radio custom-control-inline">
+<input id="lightTheme" type="radio" name="theme" value="chrome" class="custom-control-input">
+<label for="lightTheme" class="custom-control-label">Light</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input id="darkTheme" type="radio" name="theme" value="monokai" class="custom-control-input" checked>
+<label for="darkTheme" class="custom-control-label">Dark</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+<input id="twilightTheme" type="radio" name="theme" value="twilight" class="custom-control-input">
+<label for="twilightTheme" class="custom-control-label">Twilight</label>
+</div>
+</div>
+<div class="d-flex justify-content-between p-3">
+<h6 class="col pl-0 font-weight-bold">IntelliSense</h6>
+<div class="d-flex col justify-content-start">
+<label class="switch">
+<input type="checkbox" id="autoCompletion" checked>
+<span class="slider round"></span>
+</label>
+</div>
+</div>
+<div class="d-flex justify-content-between p-3">
+<h6 class="col pl-0 font-weight-bold">Code Wrap</h6>
+<div class="d-flex col justify-content-start">
+<label class="switch">
+<input type="checkbox" id="codeWrap" checked>
+<span class="slider round"></span>
+</label>
+</div>
+</div>
+<div class="d-flex justify-content-between p-3">
+<h6 class="col pl-0 font-weight-bold">Show Gutter</h6>
+<div class="d-flex col justify-content-start">
+<label class="switch">
+<input type="checkbox" id="showGutter" checked>
+<span class="slider round"></span>
+</label>
+</div>
+</div>
+<div class="d-flex justify-content-between p-3">
+<h6 class="col pl-0 font-weight-bold">Line Numbers</h6>
+<div class="d-flex col justify-content-start">
+<label class="switch">
+<input type="checkbox" id="lineNumber" checked>
+<span class="slider round"></span>
+</label>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center p-3">
+<h6 class="col pl-0 font-weight-bold">Insert Code Template</h6>
+<div class="d-flex col justify-content-start">
+<button class="btn btn-primary" id="insertTemplate">Insert</button>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="d-flex justify-content-between align-items-center ">
+<a class="align-items-center justify-content-around d-flex share-link" href="#">
+
+<i class="fas fa-share-alt px-2"></i>
+<span>Share it with friends</span>
+</a>
+<a href="#" data-toggle="tooltip" data-placement="top" data-html="true" title="
+                      <h6>GUVI {IDE}</h6>
+                      <p>Free online compiler to compile and run your programs online. It offers support for 20+ on demand programming languages</p>">
+<span class="material-icons">info</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="debuggerModal" tabindex="-1" role="dialog" aria-labelledby="debuggerModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-slideout mw-100 w-100" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="debuggerModalLabel">Debugger</h5>
+<button type="button" id="debuggerModalClose" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<div id="debuggerDiv">
+<p>Loading Might take some time to stimulate Please hold on !</p>
+<p class="is-invalid">Note : Using Long recursion may take so long</p>
+</div>
+</div>
+<div class="modal-footer">
+<div class="d-flex justify-content-between align-items-center ">
+<a class="align-items-center justify-content-around d-flex share-link" href="#">
+
+<i class="fas fa-share-alt px-2"></i>
+<span>Share it with friends</span>
+</a>
+<a href="#" data-toggle="tooltip" data-placement="top" data-html="true" title="
+                    <h6>GUVI {IDE}</h6>
+                    <p>Free online compiler to compile and run your programs online. It offers support for 20+ on demand programming languages</p>">
+<span class="material-icons">info</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="switchTemplatePrompt">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0 d-flex justify-content-center">
+<h5 class="modal-title">Keep the Code Changes?</h5>
+</div>
+<div class="modal-footer d-flex justify-content-around border-0">
+<button type="button" class="btn btn-secondary text-white px-5" id="dontKeepChanges">No</button>
+<button type="button" class="btn btn-primary px-5" id="keepChanges">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="inputDetected">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0 d-flex justify-content-center">
+<h5 class="modal-title">Input Function Found !</h5>
+</div>
+<div class="modal-body">
+<p>Please replace ⌨️ input function with some values while debugging.</p>
+<p><small>Soon the feature will be supported</small></p>
+</div>
+<div class="modal-footer d-flex justify-content-around border-0">
+<button type="button" class="btn btn-primary px-5" data-dismiss="modal" aria-label="Close">Try again Replacing Input</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="unsupported">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0 d-flex justify-content-center">
+<h5 class="modal-title">Function Not Supported 🛑!</h5>
+</div>
+<div class="modal-body">
+<p>We Do not support this Language, Supported Languages:</p>
+<p><small>
+<ul>
+
+
+<li>Javascript</li>
+
+<li>Python3</li>
+<li>Ruby</li>
+
+</ul>
+</small></p>
+</div>
+<div class="modal-footer d-flex justify-content-around border-0">
+<button type="button" class="btn btn-primary px-5" data-dismiss="modal" aria-label="Close">Ok, I will change language</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="idePopUp">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header border-0 d-flex justify-content-center">
+<h5 class="modal-title">Try the new Debugger! !</h5>
+</div>
+<div class="modal-body">
+<p>Fix your code with the new Dubug option.</p>
+
+<p>Supported Languages:</p>
+<p>
+<small>
+<ul>
+
+
+<li>Javascript</li>
+
+<li>Python3</li>
+<li>Ruby</li>
+
+</ul>
+</small>
+</p>
+</div>
+<div class="modal-footer d-flex justify-content-around border-0">
+<button type="button" class="btn btn-primary px-5" id="tryButton" data-dismiss="modal" aria-label="Close">Try it now!</button>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" defer src="js/ide.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdADb4UAAAAAA1feb36sozffPYRKKOqD9WPbibp" defer></script>
+<script defer>
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-53114947-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+<script defer src='https://www.google-analytics.com/analytics.js'></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"673afa174edb0dc8","token":"2f35337e9f74445394cc3c1f88e8effd","version":"2021.7.0","si":10}'></script>
+</body>
+</html>
